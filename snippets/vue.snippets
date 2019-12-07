@@ -8,13 +8,13 @@ extends html, javascript, css
 
 # some html-like snippets
 
-snippet slot
+snippet sl
 	<slot></slot>
 
-snippet template
+snippet tpl
 	<template></template>
 
-snippet transition
+snippet trans
 	<transition></transition>
 
 # The following snippets create more complex boilerplate code.
@@ -36,7 +36,23 @@ snippet vbase
 
 	</style>
 
-snippet vimport:c
+snippet vcust
+	<template lang="pug">
+		div
+			
+	</template>
+
+	<script>
+		export default{
+			${0}
+		}
+	</script>
+
+	<style scoped lang="sass">
+
+	</style>
+
+snippet vimp:c
 	import ${1:Name} from './components/$1.vue';
 
 	export default {
@@ -45,7 +61,7 @@ snippet vimport:c
 		}
 	}
 
-snippet vactions
+snippet vact
 	actions: {
 		${1:updateValue}({commit}, ${2:payload}) {
 			commit($1, $2);
@@ -108,7 +124,7 @@ snippet vdata
 		};
 	}
 
-snippet vfilter
+snippet vfil
 	filters: {
 		${1:fnName}: function(${2:value}) {
 			return;
@@ -120,14 +136,14 @@ snippet vfor
 		{{ $1 }}
 	</div
 
-snippet vgetters
+snippet vget
 	getters: {
 		${1:value}: state => {
 			return state.$1;
 		}
 	}
 
-snippet vimport
+snippet vimp
 	import ${1:New} from './components/$1.vue';
 
 snippet vkeep
@@ -154,13 +170,13 @@ snippet vmutations
 		}
 	}
 
-snippet vprops:d
+snippet vpr:d
 	${1:propName}: {
 	  type: ${2:Number},
 	  default: ${0}
 	},
 
-snippet vprops
+snippet vpr
 	${1:propName}: {
 		type: ${2:Number}
 	},
